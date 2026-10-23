@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Traffic Survey Worksheet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <p class="eyebrow">TRAFFIC IMPACT ASSESSMENT</p>
+      <h1>Traffic Survey Worksheet</h1>
+      <div class="grid3">
+        <label><span class="lbl">SURVEY DATE (APPLIES TO ALL PERIODS)</span>
+          <input type="date" id="surveyDate" class="hdr-input" /></label>
+        <label><span class="lbl">LOCATION / INTERSECTION</span>
+          <input type="text" id="location" class="hdr-input" placeholder="e.g. Calderon Corner P. Burgos" /></label>
+        <div><span class="lbl">SURVEY ID</span><p id="surveyId" class="mono"></p></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card row-between">
+      <div>
+        <p class="muted">Survey datasets</p>
+        <div id="datasets" class="chips"></div>
+      </div>
+      <div class="chips end">
+        <label><span class="muted">New survey date</span><input type="date" id="newDate" class="input" /></label>
+        <button id="addDataset" class="btn primary" disabled>New dataset</button>
+        <button id="exportCsv" class="btn">Export CSV</button>
+        <button id="exportWord" class="btn primary">Download Word</button>
+      </div>
+    </section>
+
+    <nav class="tabs">
+      <button data-tab="counts" class="tab active">Traffic counts</button>
+      <button data-tab="summary" class="tab">Summary</button>
+      <button data-tab="settings" class="tab">Settings</button>
+    </nav>
+
+    <div id="movements" class="chips mt"></div>
+    <div id="content"></div>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
